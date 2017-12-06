@@ -47,7 +47,9 @@ public class LoginController extends BaseController {
 	 * @param response
 	 * @return
 	 */
+	@RequestMapping(value = "login")
 	@ResponseBody
+	public String login(HttpServletRequest request,
 			HttpServletResponse response) {
 
 		String errJson = "{\"ret\":\"0\"}";
@@ -81,7 +83,9 @@ public class LoginController extends BaseController {
 	 * @param response
 	 * @return
 	 */
+	@RequestMapping(value = "register")
 	@ResponseBody
+	public String register(HttpServletRequest request,
 			HttpServletResponse response) {
 
 		String errJson = "{\"ret\":\"0\"}";

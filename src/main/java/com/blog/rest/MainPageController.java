@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value = "MainPage")
 public class MainPageController {
 
-	@RequestMapping(value = "GetMainPage")
+	@RequestMapping(value = "getMainPage")
 	public ModelAndView getMainPage(HttpServletRequest request,
 			HttpServletResponse response) {
 
@@ -23,7 +23,7 @@ public class MainPageController {
 
 	}
 	
-	@RequestMapping(value = "GetAboutPage")
+	@RequestMapping(value = "getAboutPage")
 	public ModelAndView getAbout(HttpServletRequest request,
 			HttpServletResponse response) {
 

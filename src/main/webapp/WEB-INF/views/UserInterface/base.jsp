@@ -87,14 +87,14 @@
 			<div class="navbar navbar-inverse navbar-fixed-top">
 				<ul class="nav nav-pills padding-top-5" style="float:left">
 					<li class="nav-item"><a class="nav-link active"
-						itype="item-link" href="javascript:void()"
-						target="/MainPage/GetMainPage">主页</a></li>
+						itype="item-link" href="javascript:void('');"
+						target="/MainPage/getMainPage">主页</a></li>
 					<li class="nav-item"><a class="nav-link" itype="item-link"
-						href="javascript:void()" target="/Blog/GetBlogPage">博客</a></li>
+						href="javascript:void('');" target="/Blog/getBlogPage">博客</a></li>
 					<li class="nav-item"><a class="nav-link" itype="item-link"
-						href="javascript:void()" target="/Message/GetMessagePage">留言板</a></li>
+						href="javascript:void('');" target="/Message/getMessagePage">留言板</a></li>
 					<li class="nav-item"><a class="nav-link" itype="item-link"
-						href="javascript:void()" target="/MainPage/GetAboutPage">关于</a></li>
+						href="javascript:void('');" target="/MainPage/getAboutPage">关于</a></li>
 				</ul>
 				<div style="float:right;" class="padding-top-5" id="sign_bar">
 					<button type="button" class="btn btn-link padding-top-5"

@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value = "Blog")
 public class BlogController {
 
-	@RequestMapping(value = "GetBlogPage")
+	@RequestMapping(value = "getBlogPage")
 	public ModelAndView getBlogPage(HttpServletRequest request,
 			HttpServletResponse response) {
 

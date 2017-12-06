@@ -1,0 +1,101 @@
+package com.blog.rest;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.blog.dao.TUserDAO;
+import com.blog.po.TUser;
+
+/**
+ * 
+ * 
+ * @author ghy
+ * @date 2017�?�?2�? 类说�? :
+ */
+@Controller
+@RequestMapping(value = "Login")
+public class LoginController extends BaseController {
+
+	@Resource(name = "TUserDAO")
+	private TUserDAO tUserDao;
+
+	@RequestMapping(value = "toLogin")
+	public ModelAndView toLogin(HttpServletRequest request,
+			HttpServletResponse response) {
+
+		ModelAndView mav = new ModelAndView();
+
+		mav.setViewName("UserInterface/Login/Login");
+		return mav;
+
+	}
+	
+	/**
+	 * 登陆接口
+	 * 
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping(value = "signin")
+	@ResponseBody
+	public String signin(HttpServletRequest request,
+			HttpServletResponse response) {
+
+		String errJson = "{\"ret\":\"0\"}";
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+
+		// 输入验证
+		if (username == "" || password == "") {
+			return errJson;
+		}
+		List<TUser> tUserList = tUserDao.findByFName(username);
+		if (tUserList == null || tUserList.size() < 1) {
+			return errJson;
+		}
+		TUser tUser = tUserList.get(0);
+		if (!password.equals(tUser.getFPassword())) {
+			return errJson;
+		}
+		request.getSession().setAttribute("userinfo", tUser);
+		StringBuilder successJson = new StringBuilder();
+		successJson.append("{");
+		successJson.append("\"ret\":\"1\"");
+		successJson.append("}");
+		return successJson.toString();
+	}
+
+	/**
+	 * 注册接口
+	 * 
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping(value = "signup")
+	@ResponseBody
+	public String signup(HttpServletRequest request,
+			HttpServletResponse response) {
+
+		String errJson = "{\"ret\":\"0\"}";
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+
+		StringBuilder successJson = new StringBuilder();
+		successJson.append("{");
+		successJson.append("\"ret\":\"1\"");
+		successJson.append("}");
+		return successJson.toString();
+	}
+}

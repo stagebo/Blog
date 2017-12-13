@@ -5,6 +5,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 %>
 <div>
 
+<script src="static/plugins/jquery/jquery-1.12.2.js"></script>
+<script src="static/plugins/Bootstrap/js/bootstrap.js"></script>
+
 this is blog index page.<br>
 this is blog index page.<br>
 this is blog index page.<br>

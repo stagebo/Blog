@@ -11,10 +11,10 @@
 <html>
 <head>
 <link rel="stylesheet"
-	href="static/plugins/Bootstrap/css/bootstrap-theme.css">
+	href="../static/plugins/Bootstrap/css/bootstrap-theme.css">
 
 <script src="static/plugins/jquery/jquery-1.12.2.js"></script>
-<script src="static/plugins/Bootstrap/js/bootstrap.js"></script>
+<script src="../static/plugins/Bootstrap/js/bootstrap.js"></script>
 <style type="text/css">
 body {
 	background: url('../static/image/bgImg/background.jpg');
